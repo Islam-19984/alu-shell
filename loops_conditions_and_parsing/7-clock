@@ -13,7 +13,4 @@ while [ $h -le 12 ]; do
 	done
 
 	((h++))
-	don
-
-
-
+	done
