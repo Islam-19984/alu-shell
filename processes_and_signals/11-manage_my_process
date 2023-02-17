@@ -1,32 +1,7 @@
 #!/usr/bin/env bash
-# Init script to manage another process
+# This script manages my processes
 
-# Start my process
-start() {
-	./manage_my_process &
-	echo "$!" > /var/run/my_process.pid
-}
-
-stop() {
-	pkill -f ./manage_my_process
-	rm /var/run/my_process.pid
-}
-
-case "$1" in 
-	start)
-		start
-		echo "manage_my_process started"
-		;;
-	stop)
-		stop
-		echo "manage_my_process stopped"
-		;;
-	restart)
-		stop
-		start
-		echo "manage_my_process restarted"
-		;;
-	*)
-		echo "Usage: manage_my_process {start|stop|restart}"
-		;;
-esac
+while true; do
+        echo "I am alive!" >> /tmp/my_process
+        sleep 2
+done
